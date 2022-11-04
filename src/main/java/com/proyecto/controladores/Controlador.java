@@ -67,5 +67,35 @@ public class Controlador {
 		
 		return mv;
 	}
+	
+	@GetMapping("/sesion-login")
+	public ModelAndView sesionLoginIntranet() {
+		return new ModelAndView("sesion-login");
+	}
+	
+	@GetMapping("/sesion-validate")
+	public ModelAndView sesionValidateIntranet(HttpServletRequest request) {
+		
+		final String correct_user = "ricardohuaripata";
+		final String correct_password = "helloworld985";
+		
+		boolean valid_user = false;
+		boolean valid_password = false;
+		
+		String sesion_user = request.getParameter("sesion_user");
+		String sesion_password = request.getParameter("sesion_password");
+		
+		if(sesion_user.equals(correct_user)) {
+			valid_user = true;
+		}
+		if(sesion_password.equals(correct_password)) {
+			valid_password = true;
+		}
+		
+		request.setAttribute("valid_user", valid_user);
+		request.setAttribute("valid_password", valid_password);
+		
+		return new ModelAndView("sesion-validate");
+	}
 
 }
