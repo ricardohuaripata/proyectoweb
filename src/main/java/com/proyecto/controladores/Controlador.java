@@ -15,36 +15,37 @@ public class Controlador {
 	public ModelAndView indexIntranet() {
 		return new ModelAndView("index");
 	}
+	
+	@GetMapping("/hashmap-personas")
+	public ModelAndView hashmapPersonasIntranet() {
+		return new ModelAndView("hashmap-personas");
+	}
 
-	@GetMapping("/calculadora")
-	public ModelAndView calculadoraIntranet() {
-		return new ModelAndView("calculadora");
+	@GetMapping("/bigdecimal")
+	public ModelAndView bigdecimalIntranet() {
+		return new ModelAndView("bigdecimal");
 	}
 	
-	@GetMapping("/resultado")
-	public ModelAndView resultadoIntranet(HttpServletRequest request) {
-		
-		String valor1 = request.getParameter("valor1");
-		String valor2 = request.getParameter("valor2");
-		String tipoOperacion = request.getParameter("tipoOperacion");
-		
-		request.setAttribute("valor1", valor1);
-		request.setAttribute("valor2", valor2);
-		request.setAttribute("tipoOperacion", tipoOperacion);
-		
-		return new ModelAndView("resultado");
+	@GetMapping("/calculadora-operacion")
+	public ModelAndView calculadoraOperacionIntranet() {
+		return new ModelAndView("calculadora-operacion");
+	}
+	
+	@GetMapping("/calculadora-resultado")
+	public ModelAndView calculadoraResultadoIntranet(HttpServletRequest request) {
+		return new ModelAndView("calculadora-resultado");
 	
 	}
 	
-	@GetMapping("/formulario")
-	public ModelAndView formularioIntranet() {
-		return new ModelAndView("formulario");
+	@GetMapping("/formulario-rellenar")
+	public ModelAndView formularioRellenarIntranet() {
+		return new ModelAndView("formulario-rellenar");
 	}
 	
-	@GetMapping("/resultadoFormulario")
-	public ModelAndView resultadoFormularioIntranet(HttpServletRequest request) {
+	@GetMapping("/formulario-resultado")
+	public ModelAndView formularioResultadoIntranet(HttpServletRequest request) {
 		
-		ModelAndView mv = new ModelAndView("resultadoFormulario");
+		ModelAndView mv = new ModelAndView("formulario-resultado");
 				
 		String nombre = request.getParameter("nombre");
 		String apellido1 = request.getParameter("apellido1");

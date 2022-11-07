@@ -28,21 +28,21 @@
 		int cantidadMujeres=0;
 		ArrayList<Persona> ar = new ArrayList<Persona>();
 
-		Persona alumno1 = new Persona("Ricardo", "Huaripata", "Bellido", "Sevilla", "Hombre");
-		Persona alumno2 = new Persona("Eva", "Cardenas", "Bermudez", "Sevilla", "Mujer");
-		Persona alumno3 = new Persona("Pablo", "Dominguez", "Dominguez", "Sevilla", "Hombre");
-		Persona alumno4 = new Persona("Alejandro", "Martagon", "Reina", "Sevilla", "Hombre");
-		Persona alumno5 = new Persona("Juan", "Castaño", "Carrilero", "Sevilla", "Hombre");
-		Persona alumno6 = new Persona("Sara", "Artiles", "Heras", "Gran Canarias", "Mujer");
-		Persona alumno7 = new Persona("Fernando", "Perez", "Nieto", "Sevilla", "Hombre");
-		Persona alumno8 = new Persona("Paula", "Zujar", "Cote", "Sevilla", "Mujer");
-		Persona alumno9 = new Persona("Paula", "Hidalgo", "Mauriño", "Sevilla", "Mujer");
-		Persona alumno10 = new Persona("Jonatan", "Carrera", "Viera", "Sevilla", "Hombre");
-		Persona alumno11 = new Persona("Jeffery", "Wilberth", "Chavez", "Sevilla", "Hombre");
-		Persona alumno12 = new Persona("Roberto", "Rodriguez", "Nuñez", "Sevilla", "Hombre");
-		Persona alumno13 = new Persona("Ana", "García", "Ruiz", "Sevilla", "Mujer");
-		Persona alumno14 = new Persona("Rafael", "Herrera", "Chávez", "Sevilla", "Hombre");
-		Persona alumno15 = new Persona("Jose", "Guillamon", "Marin", "Sevilla", "Hombre");
+		Persona alumno1 = new Persona("Ricardo", "Huaripata", "Bellido", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno2 = new Persona("Eva", "Cardenas", "Bermudez", "", "", "", "Sevilla", "","", "", "Mujer");
+		Persona alumno3 = new Persona("Pablo", "Dominguez", "Dominguez", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno4 = new Persona("Alejandro", "Martagon", "Reina", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno5 = new Persona("Juan", "Castaño", "Carrilero", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno6 = new Persona("Sara", "Artiles", "Heras", "", "", "", "Gran Canarias", "","", "", "Mujer");
+		Persona alumno7 = new Persona("Fernando", "Perez", "Nieto", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno8 = new Persona("Paula", "Zujar", "Cote", "", "", "", "Sevilla", "","", "", "Mujer");
+		Persona alumno9 = new Persona("Paula", "Hidalgo", "Mauriño", "", "", "", "Sevilla", "","", "", "Mujer");
+		Persona alumno10 = new Persona("Jonatan", "Carrera", "Viera", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno11 = new Persona("Jeffery", "Wilberth", "Chavez", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno12 = new Persona("Roberto", "Rodriguez", "Nuñez", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno13 = new Persona("Ana", "García", "Ruiz", "", "", "", "Sevilla", "","", "", "Mujer");
+		Persona alumno14 = new Persona("Rafael", "Herrera", "Chávez", "", "", "", "Sevilla", "","", "", "Hombre");
+		Persona alumno15 = new Persona("Jose", "Guillamon", "Marin", "", "", "", "Sevilla", "","", "", "Hombre");
 
 		ar.add(alumno1);
 		ar.add(alumno2);

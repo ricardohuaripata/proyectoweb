@@ -8,7 +8,7 @@
 <html>
 
 <head>
-<title>Validacion Formulario</title>
+<title>Validacion formulario</title>
 </head>
 
 <body>
