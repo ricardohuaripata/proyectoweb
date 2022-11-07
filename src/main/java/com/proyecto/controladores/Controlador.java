@@ -1,6 +1,10 @@
 package com.proyecto.controladores;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -75,27 +79,21 @@ public class Controlador {
 	}
 	
 	@GetMapping("/sesion-validate")
-	public ModelAndView sesionValidateIntranet(HttpServletRequest request) {
+	public ModelAndView sesionValidateIntranet(HttpServletRequest request, HttpSession session, HttpServletResponse response) {
 		
-		final String correct_user = "ricardohuaripata";
-		final String correct_password = "helloworld985";
-		
-		boolean valid_user = false;
-		boolean valid_password = false;
-		
+		String login = "ricardohuaripata";
+		String clave = "clave";
+
 		String sesion_user = request.getParameter("sesion_user");
 		String sesion_password = request.getParameter("sesion_password");
 		
-		if(sesion_user.equals(correct_user)) {
-			valid_user = true;
-		}
-		if(sesion_password.equals(correct_password)) {
-			valid_password = true;
-		}
+		session.setAttribute("password", sesion_password);
 		
-		request.setAttribute("valid_user", valid_user);
-		request.setAttribute("valid_password", valid_password);
+		Cookie cookie = new Cookie("user", sesion_user);
+		cookie.setMaxAge(60*60*24);
 		
+		response.addCookie(cookie);
+
 		return new ModelAndView("sesion-validate");
 	}
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,25 +10,21 @@
 
 <body>
 
-	<div align="center">
-		<h1>Iniciar sesión</h1>
+	<h1>Iniciar sesion</h1>
 
-		<%
-		String user = "ricardohuaripata";
-		String password = "helloworld985";
-		%>
-		<form method="get" action="sesion-validate">
-			<p>
-				Usuario: <input type="text" name="sesion_user" required />
-			</p>
-			<p>
-				Contraseña: <input type="text" name="sesion_password" required />
-			</p>
-			<p>
-				<input type="submit" value="Entrar" />
-			</p>
-		</form>
-	</div>
+	<form method="get" action="sesion-validate">
+		<table style="with: 50%">
+			<tr>
+				<td>Usuario</td>
+				<td><input type="text" name="sesion_user" /></td>
+			</tr>
+			<tr>
+				<td>Contraseña</td>
+				<td><input type="text" name="sesion_password" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit" />
+	</form>
 </body>
 
 </html>
