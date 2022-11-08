@@ -13,13 +13,13 @@
 	<h1>Sesion</h1>
 
 	<%
+	out.println("<p>Hola "+ session.getAttribute("session-user") +" </p>");
 	
 	Cookie[] cookies = request.getCookies();
 	for(int i=0; i<cookies.length; i++) {
-		out.println("<p>"+cookies[i].getValue()+"</p>");
+		out.println("<p>Cookie: " + cookies[i].getValue() + "</p>");
 	}
 	
-	out.println("<p>"+session.getAttribute("password")+"</p>");
 	%>
 
 </body>

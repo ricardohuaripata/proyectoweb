@@ -10,17 +10,23 @@
 
 <body>
 
+<%
+if((String)request.getAttribute("error") != null) {
+	out.println("<p style='color: red'>Login incorrecto</p>");
+}
+%>
+
 	<h1>Iniciar sesion</h1>
 
-	<form method="get" action="sesion-validate">
+	<form method="get" action="session-validate">
 		<table style="with: 50%">
 			<tr>
 				<td>Usuario</td>
-				<td><input type="text" name="sesion_user" /></td>
+				<td><input type="text" name="user" /></td>
 			</tr>
 			<tr>
 				<td>Contraseña</td>
-				<td><input type="text" name="sesion_password" /></td>
+				<td><input type="text" name="password" /></td>
 			</tr>
 		</table>
 		<input type="submit" value="Submit" />
