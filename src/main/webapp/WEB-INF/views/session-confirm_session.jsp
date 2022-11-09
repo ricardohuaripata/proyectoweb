@@ -13,7 +13,8 @@
 	<h1>Confirmar sesion</h1>
 
 	<%
-
+	out.println("<p>Usuario: " + session.getAttribute("session-user") + " </p>");
+	out.println("<p>Estado de sesion: Anteriormente iniciada </p>");
 	%>
 
 </body>

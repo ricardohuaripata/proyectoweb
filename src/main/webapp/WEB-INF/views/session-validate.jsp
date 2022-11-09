@@ -21,6 +21,8 @@
 	}
 	
 	%>
+	
+	<a href="session-confirm_session">Quiero confirmar mi sesion</a>
 
 </body>
 

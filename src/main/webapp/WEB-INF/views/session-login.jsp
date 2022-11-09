@@ -22,11 +22,11 @@ if((String)request.getAttribute("error") != null) {
 		<table style="with: 50%">
 			<tr>
 				<td>Usuario</td>
-				<td><input type="text" name="user" /></td>
+				<td><input type="text" name="user" required/></td>
 			</tr>
 			<tr>
 				<td>Contraseña</td>
-				<td><input type="text" name="password" /></td>
+				<td><input type="text" name="password" required/></td>
 			</tr>
 		</table>
 		<input type="submit" value="Submit" />

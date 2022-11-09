@@ -87,36 +87,44 @@ public class Controlador {
 	@GetMapping("/session-validate")
 	public ModelAndView sessionValidateIntranet(HttpServletRequest request, HttpSession session,
 			HttpServletResponse response) {
-
+		
 		ModelAndView mv = new ModelAndView("session-validate");
-
-		String correct_user = "ricardohuaripata";
-		String correct_pass = "myPassword";
-
-		String user = request.getParameter("user");
-		String pass = request.getParameter("password");
-
-		if (user.equals(correct_user) && pass.equals(correct_pass)) {
-
-			session.setAttribute("session-user", user);
-
-			Cookie cookie1 = new Cookie("user", user);
-			Cookie cookie2 = new Cookie("pass", pass);
-			cookie1.setMaxAge(60 * 60 * 24);
-			cookie2.setMaxAge(60 * 60 * 24);
-			response.addCookie(cookie1);
-			response.addCookie(cookie2);
-		} else {
+		// si no ha pasado primero por el login, se redirige al login
+		if(request.getParameter("user") == null || request.getParameter("password") == null) {
 			mv = new ModelAndView("redirect:/session-login");
-			mv.addObject("error", "Login incorrecto");
+		} else {
+			
+			String correct_user = "ricardohuaripata";
+			String correct_pass = "myPassword";
+
+			String user = request.getParameter("user");
+			String pass = request.getParameter("password");
+
+			if (user.equals(correct_user) && pass.equals(correct_pass)) {
+
+				session.setAttribute("session-user", user);
+
+				Cookie cookie1 = new Cookie("user", user);
+				Cookie cookie2 = new Cookie("pass", pass);
+				cookie1.setMaxAge(60 * 60 * 24);
+				cookie2.setMaxAge(60 * 60 * 24);
+				response.addCookie(cookie1);
+				response.addCookie(cookie2);
+			} else {
+				mv = new ModelAndView("redirect:/session-login");
+				mv.addObject("error", "Login incorrecto");
+			}
+			
 		}
 
 		return mv;
 	}
 
 	@GetMapping("/session-confirm_session")
-	public ModelAndView sessionLsoginIntranet(HttpServletRequest request, HttpSession session) {
+	public ModelAndView sessionConfirm(HttpServletRequest request, HttpSession session) {
 		ModelAndView mv = new ModelAndView("session-confirm_session");
+		//si ha hecho el login correctamente tendra su sesion iniciada con su nombre de usuario
+		//de lo contrario el atributo de sesion sera null
 		if (session.getAttribute("session-user") == null) {
 			mv = new ModelAndView("redirect:/session-login");
 		}
