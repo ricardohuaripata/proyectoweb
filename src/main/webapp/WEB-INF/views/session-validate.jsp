@@ -18,6 +18,7 @@
 	Cookie[] cookies = request.getCookies();
 	for(int i=0; i<cookies.length; i++) {
 		out.println("<p>Cookie: " + cookies[i].getValue() + "</p>");
+		cookies[i].getName();
 	}
 	
 	%>
